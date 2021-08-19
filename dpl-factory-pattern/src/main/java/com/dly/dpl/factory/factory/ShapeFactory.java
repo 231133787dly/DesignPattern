@@ -1,10 +1,10 @@
 package com.dly.dpl.factory.factory;
 
+import com.dly.dpl.core.enumrated.ShapeType;
 import com.dly.dpl.factory.instance.IShape;
 import com.dly.dpl.factory.instance.impl.Circle;
 import com.dly.dpl.factory.instance.impl.Rectangle;
 import com.dly.dpl.factory.instance.impl.Square;
-
 /**
  * @author dly Email:dingly2@shanghai-electric.com
  * @date 2021/8/19 14:29:35
@@ -20,11 +20,11 @@ public class ShapeFactory {
         if(shapeType == null){
             return null;
         }
-        if(shapeType.equalsIgnoreCase("CIRCLE")){
+        if(shapeType.equalsIgnoreCase(ShapeType.CIRCLE.name())){
             return new Circle();
-        } else if(shapeType.equalsIgnoreCase("RECTANGLE")){
+        } else if(shapeType.equalsIgnoreCase(ShapeType.RECTANGLE.name())){
             return new Rectangle();
-        } else if(shapeType.equalsIgnoreCase("SQUARE")){
+        } else if(shapeType.equalsIgnoreCase(ShapeType.SQUARE.name())){
             return new Square();
         }
         return null;
