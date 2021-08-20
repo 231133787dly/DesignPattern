@@ -1,6 +1,6 @@
 package com.dly.dpl.singleton;
 
-import com.dly.dpl.singleton.Object.SingleObject;
+import com.dly.dpl.singleton.Object.*;
 
 /**
  * @author dly Email:dingly2@shanghai-electric.com
@@ -17,5 +17,28 @@ public class SingletonPatternDemo {
 
         //显示消息
         object.showMessage();
+
+        //测试懒汉式非线程安全
+        SingletonLazyNotLocked singletonLazyNotLocked = SingletonLazyNotLocked.getInstance();
+        singletonLazyNotLocked.showMessage();
+
+        //测试懒汉式且线程安全
+        SingletonLazy singletonLazy = SingletonLazy.getInstance();
+        singletonLazy.showMessage();
+
+        //测试饿汉式
+        SingletonHungry singletonHungry = SingletonHungry.getInstance();
+        singletonHungry.showMessage();
+
+        //测试双检锁
+        SingletonDCL singletonDCL = SingletonDCL.getInstance();
+        singletonDCL.showMessage();
+
+        //测试静态内部类
+        SingletonStatic singletonStatic = SingletonStatic.getInstance();
+        singletonStatic.showMessage();
+
+        //测试枚举
+        SingletonEnum.INSTANCE.showMessage();
     }
 }
